@@ -22,8 +22,24 @@ app.listen(8080, () => {
  * Routes
  */
 
-app.get("/hello", (req, res) => {
-	res.status(200).json( { "message": "Epale ...!!" });
+const listIndicators = [
+	"NGDP_RPCH", 
+	"NGDPD",  
+	"NGDPDPC",
+	"PCPIPCH",
+	"PCPIEPCH",
+	"BCA",
+	"BCA_NGDPD",
+	"LUR",
+	"pb",
+	"d",
+	"DirectAbroad",
+	"DirectIn",
+];
+
+
+app.get("/api/hello", (req, res) => {
+	res.status(200).json( { listIndicators } );
 });
 
 /**
