@@ -1,4 +1,3 @@
-const { json } = require("express");
 const express = require("express");
 const axios = require("axios").create({baseUrl: ''});
 const fs = require('fs');
@@ -11,9 +10,9 @@ const app = express();
 /**
  * Server escuchando por el puerto 8080
  */
-// app.listen(8080, () => {
-//     console.log("Server started at port 8080...");
-// })
+app.listen(8080, () => {
+    console.log("Server started at port 8080...");
+})
 
 /**
  * Routes
@@ -224,4 +223,4 @@ app.get("/eia", (req, res) => {
 	res.status(200);
 });
 
-module.exports = app;
+//module.exports = app;
