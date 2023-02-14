@@ -1,11 +1,15 @@
 const express = require("express");
 const axios = require("axios").create({baseUrl: ''});
 const fs = require('fs');
+const compression = require("compression");
 
 /**
  * Crea instancia de la app
  */
 const app = express();
+
+// Compress all HTTP responses
+app.use(compression());
 
 /**
  * Server escuchando por el puerto 8080
@@ -17,6 +21,10 @@ app.listen(8080, () => {
 /**
  * Routes
  */
+
+app.get("/hello", (req, res) => {
+	res.status(200).json( { "message": "Epale ...!!" });
+});
 
 /**
  * Ruta para la generacion de un archivo tipo json 
