@@ -92,7 +92,7 @@ app.get("/i", async (req, res) => {
 });
 
 
-app.get("/fmi", async (req, res) => {
+app.get("/api/fmi", async (req, res) => {
 
 	const country = "VEN";
 	let entriesOfIndicators = [];
